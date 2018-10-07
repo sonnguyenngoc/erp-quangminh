@@ -1,0 +1,81 @@
+<div class="minicart-header">
+    <a href="" class="site-header__carts shopcart dropdown-toggle wrap-flex font-ct">
+        <span class="cart_ico">
+            <i class="fa fa-shopping-cart"></i>
+        </span>
+        <span class="cart-title hidden-sm hidden-xs  a-center">
+            <span class="title-cart hd-sticky">Giỏ Hàng</span>
+        </span>
+        <span class="cart_info hidden-sm hidden-xs  ">
+            <span id="CartCount" class="cout_cart hidden-sm hidden-xs">
+                5
+            </span>&nbsp;
+            <span class="hidden-xs">
+                items
+            </span>
+            <span class="cart-total hidden-sm hidden-xs ">
+                <span id="CartTotal" class="total_cart hidden">
+                    <span class='money'>$0.00</span>
+                </span>
+            </span>
+        </span>
+    </a>
+    <div class="block-content dropdown-content" style="display: none;">
+        <div class="no-items">
+            <p>Your cart is currently empty.</p>
+            <p class="text-continue btn">
+                <%= link_to 'Continue Shopping', '', title: '' %>
+            </p>
+        </div>
+        <div class="block-inner has-items">
+            <div class="head-minicart">
+                <span class="label-products">Your Products</span>
+                <span class="label-price hidden">Price</span>
+            </div>
+            <ol id="minicart-sidebar" class="mini-products-list">
+                <% (0..1).each do |product| %>
+                    <li class="item" data-product_id="253388914732">
+                        <div class="product-img-wrap">
+                            <%= link_to image_tag('/quangminh/img/products/product-small.jpg', alt: ''), '', title: '', class: 'product-image' %>
+                            <a href="javascript:void(0)" title="Remove This Item" class="btn-remove">&nbsp;</a>
+                        </div>
+                        <div class="product-details">
+                            <div class="inner-left">
+                                <p class="product-name">
+                                    <%= link_to 'Dround round', '', title: '' %>
+                                </p>
+                                <div class="option">
+                                </div>
+                                <div class="product-details-bottom">
+                                    <span class="title-desc">Quantity:</span>
+                                    <strong>1</strong>
+                                </div>
+                            </div>
+                            <div class="product-price">
+                                <span class="price">
+                                    <span class='money'>$473.00</span>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                <% end %>
+            </ol>
+            <div class="bottom-action actions">
+                <div class="price-total-w">
+                    <span class="label-price-total">Subtotal:</span>
+                    <span class="price-total">
+                        <span class="price">
+                            <span class='money'>$695.00</span>
+                        </span>
+                    </span>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="button-wrapper">
+                    <%= link_to 'View cart', '', title: '', class: 'link-button btn-gotocart' %>
+                    <%= link_to 'Checkout', '', title: '', class: 'link-button btn-checkout' %>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

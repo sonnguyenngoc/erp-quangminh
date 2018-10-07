@@ -1,0 +1,194 @@
+<div class="logo-nav">
+    <a href="<%= erp_quangminh.root_path %>" class="site-header-logo-image">
+        <img src="/quangminh/img/logo-mobile.png" srcset="/quangminh/img/logo-mobile.png" alt="">
+    </a>
+</div>
+<div class="menu-remove">
+    <div class="close-megamenu"><i class="icon-close"></i></div>
+</div>
+<ul class="nav site_nav_mobile active_mobile">
+    <li class="megamenu_lv1 ss_megamenu_drop mobile_dropdown  active ">
+        <%= link_to '<span class="megamenu_title">Home</span>'.html_safe, erp_quangminh.root_path, title: '' %>                  
+    </li>
+    <li class="megamenu_lv1">
+        <%= link_to '<span class="megamenu_title">Features</span>'.html_safe, '', title: '' %>
+    </li>
+    <li class="megamenu_lv1 ss_megamenu_drop mobile_dropdown  ">
+        <%= link_to '<span class="megamenu_title">Collections</span>'.html_safe, '', title: '' %>
+        <span class="toogleClick">
+            <i class="fa fa-angle-down"></i>
+        </span>
+        <div class="ss_megamenu_dropdown megamenu_dropdown nav_dropdown">
+            <div class="row">
+                <div class="col-md-3 spaceMega">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <%= link_to '<span>Clocks</span>'.html_safe, '', title: '', class: 'megatitle' %>
+                        </div>
+                        <div class="col-xs-12">
+                            <%= link_to '<span>Decorative shelving</span>'.html_safe, '', title: '', class: 'megatitle' %>
+                        </div>
+                        <div class="col-xs-12">
+                            <%= link_to '<span>Desktop</span>'.html_safe, '', title: '', class: 'megatitle' %>
+                        </div>
+                        <div class="col-xs-12">
+                            <%= link_to '<span>Dividers & Screens</span>'.html_safe, '', title: '', class: 'megatitle' %>
+                        </div>
+                        <div class="col-xs-12">
+                            <%= link_to '<span>Fireplace</span>'.html_safe, '', title: '', class: 'megatitle' %>
+                        </div>
+                        <div class="col-xs-12">
+                            <%= link_to '<span>Glassware & Ceramic</span>'.html_safe, '', title: '', class: 'megatitle' %>
+                        </div>
+                        <div class="col-xs-12">
+                            <%= link_to '<span>Mirrors</span>'.html_safe, '', title: '', class: 'megatitle' %>
+                        </div>
+                    </div>
+                </div>
+                <div class="ss_megamenu_col col-md-9 spaceMega">
+                    <div class="ss_product_mega">
+                        <div class="ss_product_content row">
+                            <% (0..1).each do |product| %>
+                                <div class="ss_megamenu_col product_col_1 col-md-6">
+                                    <div class="product-item">
+                                        <div class="product-item-container   ">
+                                            <div class="left-block">
+                                                <div class="product-image-container product-image">
+                                                    <%= link_to image_tag('/quangminh/img/products/product-161x.jpg', class: 'img-responsive', alt: ''),
+                                                                '', title: '', class: 'grid-view-item__link image-ajax' %>
+                                                </div>
+                                                <div class="box-label">
+                                                    <span class="label-product label-new">new</span>
+                                                    <span class="label-product label-sale">
+                                                        <span class="hidden">Sale</span> -25%
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="right-block">
+                                                <div class="caption">
+                                                    <h4 class="title-product">
+                                                        <%= link_to 'Donec vel venen mauris', '', title: '', class: 'product-name' %>
+                                                    </h4>
+                                                    <div class="price">
+                                                        <!-- snippet/product-price.liquid -->
+                                                        <span class="visually-hidden">Regular price</span>
+                                                        <span class="price-new">
+                                                            <span class='money'>$120.00</span>
+                                                        </span>
+                                                        <span class="price-old">
+                                                            <span class='money'>$160.00</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="button-link">
+                                                <div class="quickview-button hidden-md hidden-sm hidden-xs ">
+                                                    <a class="quickview iframe-link visible-lg btn_df" href="javascript:void(0)" title="Quick View">
+                                                        <i class="fa fa-search"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="btn-button add-to-cart action  ">
+                                                    <form class="variants">
+                                                        <input type="hidden" name="id"/>
+                                                        <a class="btn-addToCart grl btn_df" href="" title="Add to cart">
+                                                            <i class="fa fa-shopping-basket hidden"></i>
+                                                            <span>Add to cart</span>
+                                                        </a>
+                                                    </form>
+                                                </div>
+                                                <div class="product-addto-links">
+                                                    <a class="btn btn_df btnProduct" href="" title="Add to wishlist">
+                                                        <i class="fa fa-heart"></i>
+                                                        <span class="hidden">Add to wishlist</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="megamenu_lv1 ss_megamenu_drop mobile_dropdown  ">
+        <%= link_to '<span class="megamenu_title">Shop</span>'.html_safe, '', title: '' %>
+        <span class="toogleClick"><i class="fa fa-angle-down"></i></span>
+        <div class="ss_megamenu_dropdown megamenu_dropdown nav_dropdown">
+            <div class="row">
+                <div class="col-md-12 spaceMega">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <%= link_to '<span>Accessories</span>'.html_safe, 'javascript:void(0)', title: '', class: 'megatitle' %>
+                            <span class="dropdown-toggle toogleClick"><i class="fa fa-plus"></i></span>
+                            <ul class="dropdown-content mega_drop2">
+                                <li class="megamenu_lv3 "><%= link_to 'Clock', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Decorative shelving', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Desktop', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Dividers & Screens', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Glassware & Ceramic', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Fireplace', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Mirrors', '', title: '' %></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12">
+                            <%= link_to '<span>Categories</span>'.html_safe, 'javascript:void(0)', title: '', class: 'megatitle' %>
+                            <span class="dropdown-toggle toogleClick">
+                                <i class="fa fa-plus"></i>
+                            </span>
+                            <ul class="dropdown-content mega_drop2">
+                                <li class="megamenu_lv3 "><%= link_to 'Bathtime goods', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Bed & Bath Accessories', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Bedding', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Blankets', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Shower curtains', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Step Stoods', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Towels & rugs', '', title: '' %></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12">
+                            <%= link_to '<span>Furniture</span>'.html_safe, 'javascript:void(0)', title: '', class: 'megatitle' %>
+                            <span class="dropdown-toggle toogleClick"><i class="fa fa-plus"></i></span>
+                            <ul class="dropdown-content mega_drop2">
+                                <li class="megamenu_lv3 "><%= link_to 'Living room', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Bathroom', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Decor', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Blankets', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Chair', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Table', '', title: '' %></li>
+                                <li class="megamenu_lv3 "><%= link_to 'Mirror', '', title: '' %></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner_first col-md-12 spaceMega">
+                    <div class="first">
+                        <%= image_tag '/quangminh/img/bg-01.png', alt: '', class: 'img-responsive' %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="megamenu_lv1">
+        <%= link_to '<span class="megamenu_title">Blog</span>'.html_safe, '', title: '' %>
+    </li>
+    <li class="megamenu_lv1 ss_megamenu_drop mobile_dropdown  dropdown">
+        <a href="javascript:void(0)" class="ss_megamenu_head" title="">
+            <span class="megamenu_title">Page</span>
+            <span class="visually-hidden">expand</span>
+        </a>
+        <span class="toogleClick"><i class="fa fa-angle-down"></i></span>
+        <ul class="ss_megamenu_dropdown megamenu_dropdown nav_dropdown">
+            <li class="megamenu_lv2 "><%= link_to 'About us', '', title: '' %></li>
+            <li class="megamenu_lv2 "><%= link_to 'Contact us', '', title: '' %></li>
+            <li class="megamenu_lv2 "><%= link_to 'FAQs', '', title: '' %></li>
+            <li class="megamenu_lv2 "><%= link_to 'Pricing page', '', title: '' %></li>
+            <li class="megamenu_lv2 "><%= link_to 'Wishlist', '', title: '' %></li>
+        </ul>
+    </li>
+    <li class="megamenu_lv1">
+        <%= link_to '<span class="megamenu_title">Contact us</span>'.html_safe, '', title: '' %>
+    </li>
+</ul>
