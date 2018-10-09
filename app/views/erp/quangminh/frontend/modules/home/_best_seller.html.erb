@@ -1,0 +1,25 @@
+<div class="ss-carousel ss-owl">
+    <div class="owl-carousel" data-nav="false" data-margin="30" data-autoplay="false" data-autospeed="10000" data-speed="300" data-column1="2" data-column2="2" data-column3="2" data-column4="1" data-column5="1">
+        <div class="item">
+            <% count = 6 %>
+            <% (0..5).each_with_index do |product, index| %>
+                <div class="product-item clearfix ">
+                    <%= link_to image_tag('/quangminh/img/products/product-210x210.jpg', alt: ''), '', title: '', class: 'product-img' %>
+                    <div class="product-info">
+                        <h4><%= link_to 'Tủ thờ đứng', '', title: '', class: 'product-name' %></h4>
+                        <div class="price">
+                            <span class="visually-hidden">Giá:</span>
+                            <span class="price-new">
+                                <span class='money'>1.500.000 VNĐ</span>
+                            </span>
+                            <span class="price-old">
+                                <span class="money">1.800.000 VNĐ</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            <%= '</div><div class="item">'.html_safe if index%3 == 2 && index+1 != count %>
+            <% end %>
+        </div>                                        
+    </div>
+</div>
