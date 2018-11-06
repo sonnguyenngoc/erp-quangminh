@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag '/quangminh/css/slider.css' %>
+<%= javascript_include_tag '/quangminh/js/jquery.themepunch.tools.min.js' %>
+<%= javascript_include_tag '/quangminh/js/jquery.themepunch.revolution.min.js' %>
+<script type="text/javascript">
+    var revapi;
+    jQuery(document).ready(function($) {
+        revapi = $('.main-slideshow').revolution({
+            delay: 5000,
+            startwidth: 1920,
+            startheight: 820,
+            startWithSlide: 0,
+            hideThumbs: 10,
+            fullWidth: "off",
+            navigationType: "bullet",
+            navigationStyle: "round",
+            navigationArrows: "solo",
+            fullScreen: 'off',
+            hideTimerBar: 'off'
+        })
+    })
+</script>

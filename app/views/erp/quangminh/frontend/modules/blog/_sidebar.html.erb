@@ -1,0 +1,52 @@
+<div class="block widget-recent spaceBlock">
+    <h3 class="block-title">
+        <strong><span>Bài Viết Nổi Bật</span></strong>
+    </h3>
+    <div class="block-content">
+        <ul>
+            <li class="article"><%= link_to 'Donec eget faucibus felis', '', title: '' %></li>
+            <li class="article"><%= link_to 'Ut eget turpis nisi', '', title: '' %></li>
+            <li class="article"><%= link_to 'Phasellus dignissim elit id', '', title: '' %></li>
+            <li class="article"><%= link_to 'Nam in faucibus nulla', '', title: '' %></li>
+        </ul>
+    </div>
+</div>
+<div class="block widget-prd-featured spaceBlock">
+    <h3 class="block-title">
+        <strong><span>Sản Phẩm Bán Chạy</span></strong>
+    </h3>
+    <div class="block-content wrap">
+        <% (0..4).each do |product| %>
+            <div class="product-item clearfix  on-sale">
+                <%= link_to image_tag('/quangminh/img/blog/blog-sidebar.jpg', alt: ''),
+                            erp_quangminh.blog_detail_path, title: '', class: 'product-img' %>
+                <div class="product-info">
+                    <h4><%= link_to 'Donec vel venen mauris', '', title: '', class: 'product-name' %></h4>
+                    <div class="price">
+                        <!-- snippet/product-price.liquid -->
+                        <span class="visually-hidden">Giá:</span>
+                        <span class="price-new">
+                            <span class='money'>12,000,000 VNĐ</span>
+                        </span>
+                        <span class="price-old">
+                            <span class='money'>15,000,000 VNĐ</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+<div class="block widget-tags spaceBlock">
+    <h3 class="block-title"><strong><span>Tags Phổ Biến</span></strong></h3>
+    <ul class="block-content">
+        <li><a href="" title="">beauty</a></li>
+        <li><a href="" title="">chair</a></li>
+        <li><a href="" title="">furnicom</a></li>
+        <li><a href="" title="">living room</a></li>
+        <li><a href="" title="">beauty</a></li>
+        <li><a href="" title="">chair</a></li>
+        <li><a href="" title="">furnicom</a></li>
+        <li><a href="" title="">living room</a></li>                    
+    </ul>
+</div>

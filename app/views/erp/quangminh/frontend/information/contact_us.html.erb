@@ -1,0 +1,89 @@
+<section id="breadcrumbs" class="breadcrumbbgimage" style="background: url(/quangminh/img/bg_breadcrumb.png)">
+    <div class="breadcrumbwrapper">
+        <div class="container">
+            <div class="breadcrumbtitle"><h3>Liên Hệ</h3></div>
+            <nav>
+                <ol class="breadcrumb">
+                    <li><%= link_to '<span>Trang Chủ</span>'.html_safe, erp_quangminh.root_path, title: '' %></li>
+                    <li class="active"><span><span>Liên Hệ</span></span></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<div id="shopify-section-template-contact" class="shopify-section">
+    <div class="container page-contact">
+        <div class="row">
+            <div class="contact-map-wrap col-lg-12">
+                <div class="block-map">
+                    <div class="block-content maps">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979.8057260511271!2d106.6507369291558!3d10.794232599519347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529f6b299cfd9%3A0x82f9fe4d3ddc3b05!2zxJDhu5MgZ-G7lyBRVUFORyBNSU5I!5e0!3m2!1svi!2s!4v1539074980736"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="about-shop col-md-4 col-sm-5 ">
+                <h3>Thông Tin Quang Minh 98</h3>
+                <p class="text-justify">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
+                <ul class="contact">
+                    <li class="address">
+                        <i class="fa fa-map-marker"></i>
+                        <span>98 Trường Chinh, Phường 12,<br> Quận Tân Bình, TP. Hồ Chí Minh, Việt Nam</span>
+                    </li>
+                    <li class="email">
+                        <i class="fa fa-envelope"></i>
+                        Email: <%= mail_to 'quangminh98@gmail.com', '<span>quangminh98@gmail.com</span>'.html_safe, title: '' %>
+                    </li>
+                    <li class="phone">
+                        <i class="fa fa-tty"></i>
+                        <span>Hotline: <%= link_to '(028) 3842 0297', 'tel:02838420297', title: '' %></span>
+                    </li>
+                </ul>
+                <div class="social">
+                    <ul>
+                        <li class="facebook">
+                            <%= link_to '<i class="fa fa-facebook"></i>'.html_safe, '', title: '', target: '_blank' %>
+                        </li>
+                        <li class="twitter">
+                            <%= link_to '<i class="fa fa-twitter"></i>'.html_safe, '', title: '', target: '_blank' %>
+                        </li>
+                        <li class="youtube">
+                            <%= link_to '<i class="fa fa-youtube"></i>'.html_safe, '', title: '', target: '_blank' %>    
+                        </li>
+                        <li class="google_plus">
+                            <%= link_to '<i class="fa fa-google-plus"></i>'.html_safe, '', title: '', target: '_blank' %>
+                        </li>
+                        <li class="pinterest">
+                            <%= link_to '<i class="fa fa-pinterest"></i>'.html_safe, '', title: '', target: '_blank' %>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contact-form col-md-8 col-sm-7  col-xs-12">
+                <div class="contact-form form-vertical">
+                    <h3>GỬI LỜI NHẮN CHO CHÚNG TÔI</h3>
+                    <form id="contact_form" class="contact-form">
+                        <p class="note form-success hidden">
+                            <i class="fa fa-check"></i>
+                            Cảm ơn Quý khách hàng đã gửi lời nhắn cho chúng tôi. Quang Minh 98 sẽ phản hồi lại trong thời gian sớm nhất.
+                        </p>    
+                        <div class="grid grid--half-gutters">
+                            <div class="grid__item medium-up--one-half">
+                                <label class="hidden">Họ & Tên:</label>
+                                <input type="text" placeholder="Nhập họ & tên của bạn...">
+                            </div>
+                            <div class="grid__item medium-up--one-half">
+                                <label class="hidden">Email:</label>
+                                <input type="email" placeholder="Nhập địa chỉ email của bạn...">
+                            </div>
+                        </div>
+                        <label class="hidden">Số điện thoại:</label>
+                        <input type="tel" placeholder="Nhập số điện thoại của bạn...">
+                        <label class="hidden" >Nội dung:</label>
+                        <textarea rows="10" placeholder="Nhập nội dung lời nhắn của bạn..." ></textarea>
+                        <input type="submit" class="btn" placeholder="Gửi lời nhắn" value="Gửi lời nhắn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

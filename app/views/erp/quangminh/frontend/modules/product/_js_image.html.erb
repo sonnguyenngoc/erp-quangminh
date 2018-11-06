@@ -1,0 +1,32 @@
+<script> jQuery(function($) {
+    $('.large-image img').magnificPopup({
+        items: [
+            
+            {src: '//cdn.shopify.com/s/files/1/2660/9830/products/8_d6d9a7f7-d92b-49d0-bf3f-8d8767d9cb20_1024x1024.jpg?v=1513931798'},
+            
+            {src: '//cdn.shopify.com/s/files/1/2660/9830/products/9_d6ed7f58-99b7-4c05-8570-ced07ff6e71e_1024x1024.jpg?v=1513931799'},
+            
+            {src: '//cdn.shopify.com/s/files/1/2660/9830/products/11_b52a839b-7e7f-4ef5-b2ed-9d9f192613af_1024x1024.jpg?v=1513931800'},
+            
+            {src: '//cdn.shopify.com/s/files/1/2660/9830/products/13_49c986b7-6030-4d9c-873d-b60c49db9e2d_1024x1024.jpg?v=1513931800'},
+            
+            {src: '//cdn.shopify.com/s/files/1/2660/9830/products/14_669db19c-f113-4b86-8093-3c6c6b2286e9_1024x1024.jpg?v=1513931801'},
+         
+        ],
+        navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+        gallery: {
+            enabled: true,
+            preload: [0,2]
+        },
+        type: 'image',
+        mainClass: 'mfp-fade',
+        callbacks: {
+            open: function() {
+            var activeIndex = parseInt($('#thumb-slider .thumbnail.active').attr('data-index'));
+            var magnificPopup = $.magnificPopup.instance;
+            magnificPopup.goTo(activeIndex);
+            }
+        }
+    });
+    });
+</script>

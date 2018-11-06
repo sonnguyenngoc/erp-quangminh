@@ -7,7 +7,7 @@
                 <div class="product-item-container grid-view-item   ">
                     <div class="left-block">
                         <div class="product-image-container product-image">
-                            <a class="grid-view-item__link image-ajax" href="">
+                            <a class="grid-view-item__link image-ajax" href="<%= erp_quangminh.product_detail_path %>">
                                 <%= image_tag '/quangminh/img/products/product-270x270.jpg', alt: '', class: 'img-responsive' %>
                                 <span class="second-img hidden-sm hidden-xs">
                                     <%= image_tag '/quangminh/img/products/product-02-270x270.jpg', alt: '', class: 'img-responsive s-img' %>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="right-block">
                         <div class="caption">
-                            <h4 class="title-product"><%= link_to 'Tủ thờ đứng', '', title: '', class: 'product-name' %></h4>
+                            <h4 class="title-product"><%= link_to 'Tủ thờ đứng', erp_quangminh.product_detail_path, title: '', class: 'product-name' %></h4>
                             <div class="price">
                                 <span class="visually-hidden">Giá:</span>
                                 <span class="price-new">
@@ -35,8 +35,8 @@
                         </div>
                         <div class="button-link">
                             <div class="btn-button add-to-cart action  ">
-                                <a class="btn-addToCart grl btn_df" >
-                                    <i class="fa fa-shopping-basket hidden"></i>
+                                <a class="btn-addToCart grl btn_df" href="<%= erp_quangminh.product_detail_path %>">
+                                    <i class="fa fa-eye"></i>
                                     <span>Xem chi tiết sản phẩm</span>
                                 </a>
                             </div>

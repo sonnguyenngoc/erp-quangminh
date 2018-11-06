@@ -1,0 +1,53 @@
+<section id="breadcrumbs" class="breadcrumbbgimage" style="background: url(/quangminh/img/bg_breadcrumb.png)">
+    <div class="breadcrumbwrapper">
+        <div class="container">
+            <div class="breadcrumbtitle"><h3>Tin Tức</h3></div>
+            <nav>
+                <ol class="breadcrumb">
+                    <li><%= link_to '<span>Trang Chủ</span>'.html_safe, erp_quangminh.root_path, title: '' %></li>
+                    <li class="active"><span><span>Tin Tức</span></span></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="content-section col-xs-12 col-sm-4 col-md-3 col-sidebar">
+            <%= render "erp/quangminh/frontend/modules/blog/sidebar" %>
+        </div>
+        <div class="shopify-section col-xs-12 col-sm-8 col-md-9 col-main">
+            <div class="blog-views">
+                <div class="blogs blog-grid row ">
+                    <% (0..5).each do |blog| %>
+                        <div class="blog-item col-sm-6">
+                            <%= link_to image_tag('/quangminh/img/blog/blog-listing.jpg', alt: ''), erp_quangminh.blog_detail_path, title: '', class: 'article-image' %>
+                            <div class="article__grid-meta article__grid-meta--has-image">
+                                <div class="article-title">
+                                    <%= link_to 'Donec eget faucibus felis', erp_quangminh.blog_detail_path, title: '' %>
+                                </div>
+                                <div class="sub-article">
+                                    <span class="article-author"><i class="fa fa-user"></i> Quang Minh 98</span>
+                                    <span><i class="fa fa-calendar"></i> 09-10-2018</span>
+                                </div>
+                                <div class="rte des-blogs text-justify">Aliquam sem sem, ultricies ut facilisis vel, varius eget lorem. Suspendisse sollicitudin nisi luctus lorem accumsan consequat. Nullam tempus odio ac mauris rhoncus, eu hendrerit justo fermentum. Sed eget commodo quam.... </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="padding">
+                    <div class="toolbar-bottom">
+                        <ul class="pagination">
+                            <li class="disabled"><span><i class="fa fa-angle-left"></i></span></li>
+                            <li class="active"><span>1</span></li>
+                            <li><a href="" title="">2</a></li>
+                            <li><a href="" title="">3</a></li>
+                            <li><a href="" title="">4</a></li>
+                            <li class="next"><a href="" title="Next »"><i class="fa fa-angle-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

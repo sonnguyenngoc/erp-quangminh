@@ -4,24 +4,30 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 item-1">
                     <div class="app">
-                        <h3 class="app-title">Download your app</h3>
-                        <a href="#">
-                            <img class="img-payment" alt="ss-furnicom" src="//cdn.shopify.com/s/files/1/2660/9830/files/apstore.png?v=1513907588" />
-                        </a>
-                        <a href="#">
-                            <img class="img-payment" alt="ss-furnicom" src="//cdn.shopify.com/s/files/1/2660/9830/files/googleplay.png?v=1513907596" />
-                        </a>
+                        <h3 class="app-title">Tải Ứng Dụng</h3>
+                        <%= link_to image_tag('/quangminh/img/app-store.png', alt: '', class: 'img-payment'), '', title: '' %>
+                        <%= link_to image_tag('/quangminh/img/google-play.png', alt: '', class: 'img-payment'), '', title: '' %>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 item-1">
                     <div class="socials-wraps">
-                        <h3 class="social-title">Follow Us</h3>
+                        <h3 class="social-title">Theo Dõi Chúng Tôi</h3>
                         <ul>
-                            <li class="facebook"><a class="_blank" href="https://www.facebook.com/MagenTech/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li class="twitter"><a class="_blank" href="https://twitter.com/magentech" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li class="rss"><a class="_blank" href="" target="_blank"><i class="fa  fa-rss"></i></a></li>
-                            <li class="google_plus"><a class="_blank" href="https://plus.google.com/u/0/+SmartAddons-Joomla-Magento-WordPress" target="_blank"><i class="fa  fa-google-plus"></i></a></li>
-                            <li class="pinterest"><a class="_blank" href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                            <li class="facebook">
+                                <%= link_to '<i class="fa fa-facebook"></i>'.html_safe, '', title: '', target: '_blank' %>
+                            </li>
+                            <li class="twitter">
+                                <%= link_to '<i class="fa fa-twitter"></i>'.html_safe, '', title: '', target: '_blank' %>
+                            </li>
+                            <li class="youtube">
+                                <%= link_to '<i class="fa fa-youtube"></i>'.html_safe, '', title: '', target: '_blank' %>    
+                            </li>
+                            <li class="google_plus">
+                                <%= link_to '<i class="fa fa-google-plus"></i>'.html_safe, '', title: '', target: '_blank' %>
+                            </li>
+                            <li class="pinterest">
+                                <%= link_to '<i class="fa fa-pinterest"></i>'.html_safe, '', title: '', target: '_blank' %>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -31,7 +37,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 copyright a-center">
-                <address>&copy; 2018 <a href="#">Furnicom</a>. Designed by <a href="http://www.revotheme.com/" target="_blank">Revotheme.com.</a> All Rights Reserved</address>
+                <address>&copy; Copyright 2018 <%= link_to 'Nội Thất Quang Minh 98', '', title: '', target: '_blank' %>. All Rights Reserved.</address>
             </div>
             <div class="col-sm-6 col-xs-12">
             </div>

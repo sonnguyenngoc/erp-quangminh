@@ -68,11 +68,7 @@
     <%= javascript_include_tag '/quangminh/js/scripts.js',data: {sections: 'homepage-slider,home-banner-top,homepage-tab-products,home-recent-product,ss-tools,ss-facebook-message,ss-category-cowdown'} , id: 'sections-script' %>
 </head>
 
-<% if params[:controller] == "erp/quangminh/frontend/home" && params[:action] == "index" %>
-    <body class="template-index">
-<% else %>
-    <body class="template-page">
-<% end %>
+<body class="<%= @body_style %>">
     <div id="wrapper" class="page-wrapper wrapper-full effect_12">
         <!-- Loading Site -->
         <%= render "erp/quangminh/frontend/modules/loading_site" %>
@@ -98,28 +94,12 @@
         <%= render "erp/quangminh/frontend/modules/popup/add_to_cart" %>
                           
         <%= javascript_include_tag '/quangminh/js/owl.carousel.min.js' %>
+        
         <% if params[:controller] == "erp/quangminh/frontend/home" && params[:action] == "index" %>
-            <%= stylesheet_link_tag '/quangminh/css/slider.css' %>
-            <%= javascript_include_tag '/quangminh/js/jquery.themepunch.tools.min.js' %>
-            <%= javascript_include_tag '/quangminh/js/jquery.themepunch.revolution.min.js' %>
-            <script type="text/javascript">
-                var revapi;
-                jQuery(document).ready(function($) {
-                    revapi = $('.main-slideshow').revolution({
-                        delay: 5000,
-                        startwidth: 1920,
-                        startheight: 820,
-                        startWithSlide: 0,
-                        hideThumbs: 10,
-                        fullWidth: "off",
-                        navigationType: "bullet",
-                        navigationStyle: "round",
-                        navigationArrows: "solo",
-                        fullScreen: 'off',
-                        hideTimerBar: 'off'
-                    })
-                })
-            </script>
+            <%= render "erp/quangminh/frontend/modules/home/js_slideshow" %>
+        <% end %>
+        <% if params[:controller] == "erp/quangminh/frontend/product" && params[:action] == "detail" %>
+            <%= render "erp/quangminh/frontend/modules/product/js_image" %>
         <% end %>
     </div>
 </body>
