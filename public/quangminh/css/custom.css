@@ -223,3 +223,12 @@ scoped>.spr-container {
 .product-single .product-single__detail .product-info label {
     font-weight: bold;
 }
+.header.header-style1 .header-top .header-left>div {
+  margin-right: 13px;
+}
+.header.header-style1 .search-header-w .form-control {
+  width: 390px;
+}
+footer .footer-1 .footer-newsletter {
+  padding: 15px 0;
+}
