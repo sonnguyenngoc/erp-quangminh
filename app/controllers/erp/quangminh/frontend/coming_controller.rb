@@ -5,6 +5,10 @@ module Erp
         def index
           render :layout => 'erp/frontend/coming'
         end
+        def not_found          
+          render(:status => 404)
+          render :layout => 'erp/frontend/coming'
+        end
       end
     end
   end
