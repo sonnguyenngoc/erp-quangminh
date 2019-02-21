@@ -1,9 +1,4 @@
 ﻿/*
-    Name: Woodsman
-    Description: Exclusive Coming Soon WordPress Theme
-    Version: 1.0
-    Author: MountainTheme
-
     TABLE OF CONTENTS
     ---------------------------
      1. Loading
