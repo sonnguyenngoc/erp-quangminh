@@ -5,11 +5,11 @@
                 <div class="footer-block">
                     <h3 class="footer-block-title">Dành Cho Khách Hàng</h3>
                     <ul class="footer-block-content">
-                        <li><%= link_to 'Hướng Dẫn Mua Hàng', '', title: '' %></li>
-                        <li><%= link_to 'Phương Thức Thanh Toán', '', title: '' %></li>
-                        <li><%= link_to 'Cách Thức Giao Nhận', '', title: '' %></li>
-                        <li><%= link_to 'Chính Sách Đổi Trả Hàng', '', title: '' %></li>
-                        <li><%= link_to 'Câu Hỏi Thường Gặp', '', title: '' %></li>
+                        <li><%= link_to 'Hướng Dẫn Mua Hàng', erp_quangminh.shopping_guide_path, title: 'Hướng dẫn mua hàng' %></li>
+                        <li><%= link_to 'Phương Thức Thanh Toán', erp_quangminh.payment_method_path, title: 'Phương thức thanh toán' %></li>
+                        <li><%= link_to 'Cách Thức Giao Nhận', erp_quangminh.delivery_method_path, title: 'Cách thức giao nhận' %></li>
+                        <li><%= link_to 'Chính Sách Đổi Trả', erp_quangminh.return_policy_path, title: 'Chính sách đổi trả' %></li>
+                        <li><%= link_to 'Chính Sách Bảo Mật', erp_quangminh.privacy_policy_path, title: 'Chính sách bảo mật' %></li>                                            
                     </ul>
                 </div>
             </div>
@@ -27,13 +27,13 @@
             </div>
             <div class="footer-menu col-lg-3 col-md-3 col-sm-6 ft-item ft-3">
                 <div class="footer-block">
-                    <h3 class="footer-block-title">Quang Minh 98</h3>
+                    <h3 class="footer-block-title">Đồ Gỗ Việt Quang Minh</h3>
                     <ul class="footer-block-content">
-                        <li><%= link_to 'Giới Thiệu', erp_quangminh.about_us_path, title: '' %></li>
-                        <li><%= link_to 'Liên Hệ', erp_quangminh.contact_us_path, title: '' %></li>                        
-                        <li><%= link_to 'Tin Tức', erp_quangminh.blog_listing_path, title: '' %></li>
-                        <li><%= link_to 'Chính Sách Bảo Mật', '', title: '' %></li>
-                        <li><%= link_to 'Sơ Đồ Trang Web', '', title: '' %></li>
+                        <li><%= link_to 'Giới Thiệu', erp_quangminh.about_us_path, title: 'Giới thiệu' %></li>
+                        <li><%= link_to 'Liên Hệ', erp_quangminh.contact_us_path, title: 'Liên hệ' %></li>                        
+                        <li><%= link_to 'Tin Tức', erp_quangminh.blog_listing_path, title: 'Tin tức' %></li>
+                        <li><%= link_to 'Câu Hỏi Thường Gặp', erp_quangminh.faqs_path, title: 'Câu hỏi thường gặp' %></li>                        
+                        <li><%= link_to 'Sơ Đồ Trang Web', '', title: 'Sơ đồ trang web' %></li>
                     </ul>
                 </div>
             </div>
@@ -46,14 +46,14 @@
                             <span>98 Trường Chinh, Phường 12, Quận Tân Bình, TP. Hồ Chí Minh</span>
                         </li>
                         <li class="phone">
-                            <%= link_to '<i class="fa fa-mobile"></i><span>(028) 3842 0297</span>'.html_safe, 'tel:02838420297', title: '' %>
+                            <%= link_to '<i class="fa fa-mobile"></i><span>096 742 0297 (Ms. Nhung)</span>'.html_safe, 'tel:096 742 0297', title: '' %>
                         </li>
                         <li class="email">
-                            <%= mail_to 'quangminh98@gmail.com', '<i class="fa fa-envelope"></i><span>quangminh98@gmail.com</span>'.html_safe, title: '' %>
+                            <%= mail_to 'dogovietquangminh@gmail.com', '<i class="fa fa-envelope"></i><span>dogovietquangminh@gmail.com</span>'.html_safe, title: '' %>
                         </li>
                     </ul>
                     <div class="inner_payment">
-                        <%= link_to image_tag('/quangminh/img/payment.png', alt: '', class: 'img-payment'), '', title: '' %>
+                        <%= link_to image_tag('/quangminh/img/dogovietquangminh-white.svg', alt: '', class: 'img-payment'), '', title: '' %>
                     </div>
                 </div>
             </div>

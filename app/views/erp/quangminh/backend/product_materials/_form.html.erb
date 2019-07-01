@@ -1,0 +1,35 @@
+<%= form_for([erp_quangminh, :backend, product_material], html: {multipart: true}) do |f| %>
+    <div class="form-body">
+        <div class="portlet light bordered">
+            <div class="portlet-body form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <%= erp_form_control("text", {
+                            name: 'product_material[name]',
+                            value: product_material.name,                   
+                            label: t('.name'),
+                            placeholder: t('.placeholder_name'),
+                            required: true,
+                            errors: product_material.errors.full_messages_for(:name)
+                        }) %>
+                        <%= erp_form_control("textarea", {
+                            name: 'product_material[description]',
+                            value: product_material.description,                   
+                            label: t('.description'),
+                            placeholder: t('.placeholder_description')
+                        }) %>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+    
+    <%= erp_component('button/save', {
+        text: t('submit')
+    }) %>
+    
+    <%= erp_component('button/cancel', {
+        text: t('cancel'),
+        href: erp_quangminh.backend_product_materials_path
+    }) %>
+<% end %>

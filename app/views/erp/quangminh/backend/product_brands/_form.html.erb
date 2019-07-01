@@ -1,0 +1,70 @@
+<%= form_for([erp_quangminh, :backend, product_brand], html: {multipart: true}) do |f| %>
+    <div class="form-body">
+        <div class="portlet light bordered">
+            <div class="portlet-body form">
+                <div class="row">
+                    <div class="col-md-2">
+                        <%= erp_form_control('image', {
+                            img_src: product_brand.image_url.system,
+                            name: 'product_brand[image_url]',
+                            width: 150,
+                            height: 150
+                        }) %>
+                    </div>
+                    <div class="col-md-10">
+                        <%= erp_form_control("text", {
+                            name: 'product_brand[name]',
+                            value: product_brand.name,                   
+                            label: t('.name'),
+                            placeholder: t('.placeholder_name'),
+                            required: true,
+                            errors: product_brand.errors.full_messages_for(:name)
+                        }) %>
+                        <%= erp_form_control("textarea", {
+                            name: 'product_brand[description]',
+                            value: product_brand.description,                   
+                            label: t('.description'),
+                            placeholder: t('.placeholder_description')
+                        }) %>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tabbable-custom ">
+                <ul class="nav nav-tabs ">
+                    <li class="active">
+                        <a href="#tab_seo" data-toggle="tab"> <%= t('.seo') %> </a>
+                    </li>
+                </ul>
+                <div class="tab-content order-details">
+                    <div class="tab-pane addableform-table active" id="tab_property_group">
+                        <%= erp_form_control("textarea", {
+                            name: 'product_brand[meta_keywords]',
+                            value: product_brand.meta_keywords,                   
+                            label: t('.meta_keywords'),
+                            placeholder: t('.placeholder_meta_keywords')
+                        }) %>
+                        <%= erp_form_control("textarea", {
+                            name: 'product_brand[meta_description]',
+                            value: product_brand.meta_description,                   
+                            label: t('.meta_description'),
+                            placeholder: t('.placeholder_meta_description')
+                        }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <%= erp_component('button/save', {
+        text: t('submit')
+    }) %>
+    
+    <%= erp_component('button/cancel', {
+        text: t('cancel'),
+        href: erp_quangminh.backend_product_brands_path
+    }) %>
+<% end %>

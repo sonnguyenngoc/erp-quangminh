@@ -1,0 +1,117 @@
+<table class="table table-advance table-hover table-striped table-checkable order-column">
+    <thead>
+        <tr>
+            <th width='1%'>
+                <%= erp_datalist_check_all %>
+            </th>
+            <% if get_columns(params).include?("name") %>
+                <th width='25%'><%= t('.name') %></th>
+            <% end %>
+            <% if get_columns(params).include?("price") %>
+                <th class="text-center"><%= t('.price') %></th>
+            <% end %>
+            <% if get_columns(params).include?("stock") %>
+                <th class="text-center"><%= t('.stock') %></th>
+            <% end %>
+            <% if get_columns(params).include?("product_category") %>
+                <th class="text-center"><%= t('.product_category') %></th>
+            <% end %>
+            <% if get_columns(params).include?("status") %>
+                <th class="text-center"><%= t('.status') %></th>
+            <% end %>
+            <% if get_columns(params).include?("creator") %>
+                <th class="text-center"><%= t('creator') %></th>
+            <% end %>
+            <% if get_columns(params).include?("created_at") %>
+                <th class="text-center"><%= t('created_at') %></th>
+            <% end %>
+            <th width="7%" class="sortable text-nowrap text-center" sort-by='erp_quangminh_products.custom_order'>
+                <%= t('.custom_order') %>                
+            </th>
+            <th width="7%"><%= t('actions') %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @products.each do |product| %>
+            <tr class="odd gradeX">
+                <td>
+                    <%= erp_datalist_check_row(id: product.id) %>
+                </td>
+                <% if get_columns(params).include?("name") %>
+                    <td><%= link_to product.full_name, erp_quangminh.edit_backend_product_path(product), class: 'title' %></td>
+                <% end %>
+                <% if get_columns(params).include?("price") %>
+                    <td class="text-center"><%= format_number(product.price) %></td>
+                <% end %>
+                <% if get_columns(params).include?("stock") %>
+                    <td class="text-center"><%= product.stock %></td>
+                <% end %>
+                <% if get_columns(params).include?("product_category") %>
+                    <td class="text-center"><%= product.product_category_name %></td>
+                <% end %>
+                <% if get_columns(params).include?("status") %>
+                    <td class="text-center"></td>
+                <% end %>
+                <% if get_columns(params).include?("creator") %>
+                    <td class="text-center">
+                        <%= erp_component('avatar', {
+                            user: product.creator
+                        }) %>
+                    </td>
+                <% end %>
+                <% if get_columns(params).include?("created_at") %>
+                    <td class="text-center"><%= product.created_at.strftime("%d/%m/%Y") %></td>
+                <% end %>
+                <td class="text-center text-semibold">
+                    <%= product.custom_order %>
+                    <% if params[:sort_by] == 'erp_quangminh_products.custom_order' %>
+                        <a data-method="PUT"
+                            href="<%=
+                                params[:sort_direction] == 'asc' ?
+                                erp_quangminh.move_up_backend_products_path(id: product) :
+                                erp_quangminh.move_down_backend_products_path(id: product)
+                            %>"
+                            class="ajax-link">
+                            <i class="fa fa-caret-square-o-up icon-big"></i>
+                        </a>
+                        <a data-method="PUT"
+                            href="<%=
+                                params[:sort_direction] == 'asc' ?
+                                erp_quangminh.move_down_backend_products_path(id: product) :
+                                erp_quangminh.move_up_backend_products_path(id: product)
+                            %>"
+                            class="ajax-link">
+                            <i class="fa fa-caret-square-o-down icon-big"></i>
+                        </a>
+                    <% end %>
+                </td>
+                <td class="text-right">
+                    <%= erp_datalist_row_actions(
+                        [
+                            {
+                                text: '<i class="fa fa-edit"></i> '+t('edit'),
+                                href: erp_quangminh.edit_backend_product_path(product)
+                            },
+                            {
+                                divider: true
+                            },
+                            {
+                                text: '<i class="fa fa-trash"></i> '+t('.delete'),
+                                url: erp_quangminh.backend_product_path(product),
+                                data_method: 'DELETE',
+                                class: 'ajax-link',
+                                data_confirm: t('delete_confirm')
+                            }
+                        ]
+                    ) %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<% if @products.empty? %>
+    <div class="datalist-empty-line"><%= t('.no_matching_records_found') %></div>
+<% end %>
+        
+<%= erp_datalist_pagination(@products) %>

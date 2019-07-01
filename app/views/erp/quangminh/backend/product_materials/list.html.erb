@@ -1,0 +1,67 @@
+<table class="table table-advance table-hover table-striped table-checkable order-column">
+    <thead>
+        <tr>
+            <th width='1%'>
+                <%= erp_datalist_check_all %>
+            </th>
+            <% if get_columns(params).include?("name") %>
+                <th width='40%'><%= t('.name') %></th>
+            <% end %>
+            <% if get_columns(params).include?("creator") %>
+                <th class="text-center"><%= t('creator') %></th>
+            <% end %>
+            <% if get_columns(params).include?("created_at") %>
+                <th class="text-center"><%= t('created_at') %></th>
+            <% end %>
+            <th width="7%"><%= t('actions') %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @product_materials.each do |product_material| %>
+            <tr class="odd gradeX">
+                <td>
+                    <%= erp_datalist_check_row(id: product_material.id) %>
+                </td>
+                <% if get_columns(params).include?("name") %>
+                    <td><%= link_to product_material.name, erp_quangminh.edit_backend_product_material_path(product_material), class: 'title' %></td>
+                <% end %>                
+                <% if get_columns(params).include?("creator") %>
+                    <td class="text-center">
+                        <%= erp_component('avatar', {
+                            user: product_material.creator
+                        }) %>
+                    </td>
+                <% end %>
+                <% if get_columns(params).include?("created_at") %>
+                    <td class="text-center"><%= product_material.created_at.strftime("%d/%m/%Y") %></td>
+                <% end %>
+                <td class="text-right">
+                    <%= erp_datalist_row_actions(
+                        [
+                            {
+                                text: '<i class="fa fa-edit"></i> '+t('edit'),
+                                href: erp_quangminh.edit_backend_product_material_path(product_material)
+                            },
+                            {
+                                divider: true
+                            },
+                            {
+                                text: '<i class="fa fa-trash"></i> '+t('.delete'),
+                                url: erp_quangminh.backend_product_material_path(product_material),
+                                data_method: 'DELETE',
+                                class: 'ajax-link',
+                                data_confirm: t('delete_confirm')
+                            }
+                        ]
+                    ) %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<% if @product_materials.empty? %>
+    <div class="datalist-empty-line"><%= t('.no_matching_records_found') %></div>
+<% end %>
+        
+<%= erp_datalist_pagination(@product_materials) %>

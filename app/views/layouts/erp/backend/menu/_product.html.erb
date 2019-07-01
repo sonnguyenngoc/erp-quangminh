@@ -1,0 +1,52 @@
+<li class="nav-item <%= "active open" if ["erp/quangminh/backend/products"].include?(params[:controller]) |
+                                         ["erp/quangminh/backend/product_materials"].include?(params[:controller]) |
+                                         ["erp/quangminh/backend/product_categories"].include?(params[:controller]) |
+                                         ["erp/quangminh/backend/product_brands"].include?(params[:controller]) %>">
+    <a href="javascript:;" class="nav-link nav-toggle">
+        <i class="fa fa-th"></i>
+        <span class="title"><%= t('.product') %></span>
+        <% if ["erp/quangminh/backend/products"].include?(params[:controller]) |
+              ["erp/quangminh/backend/product_materials"].include?(params[:controller]) |
+              ["erp/quangminh/backend/product_categories"].include?(params[:controller]) |
+              ["erp/quangminh/backend/product_brands"].include?(params[:controller]) %>
+            <span class="selected"></span>
+            <span class="arrow open"></span>
+        <% else %>
+            <span class="arrow"></span>
+        <% end %>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item <%= "active open" if ["erp/quangminh/backend/products"].include?(params[:controller]) %>">
+            <a href="<%= erp_quangminh.backend_products_path %>" class="nav-link ">
+                <span class="title"><%= t('.products') %></span>
+                <% if ["erp/quangminh/backend/products"].include?(params[:controller]) %>
+                <span class="selected"></span>
+                <% end %>
+            </a>
+        </li>
+        <li class="nav-item <%= "active open" if ["erp/quangminh/backend/product_materials"].include?(params[:controller]) %>">
+            <a href="<%= erp_quangminh.backend_product_materials_path %>" class="nav-link ">
+                <span class="title"><%= t('.product_materials') %></span>
+                <% if ["erp/quangminh/backend/product_materials"].include?(params[:controller]) %>
+                <span class="selected"></span>
+                <% end %>
+            </a>
+        </li>
+        <li class="nav-item <%= "active open" if ["erp/quangminh/backend/product_categories"].include?(params[:controller]) %>">
+            <a href="<%= erp_quangminh.backend_product_categories_path %>" class="nav-link ">
+                <span class="title"><%= t('.product_categories') %></span>
+                <% if ["erp/quangminh/backend/product_categories"].include?(params[:controller]) %>
+                <span class="selected"></span>
+                <% end %>
+            </a>
+        </li>
+        <li class="nav-item <%= "active open" if ["erp/quangminh/backend/product_brands"].include?(params[:controller]) %>">
+            <a href="<%= erp_quangminh.backend_product_brands_path %>" class="nav-link ">
+                <span class="title"><%= t('.product_brands') %></span>
+                <% if ["erp/quangminh/backend/product_brands"].include?(params[:controller]) %>
+                <span class="selected"></span>
+                <% end %>
+            </a>
+        </li>
+    </ul>
+</li>

@@ -1,11 +1,11 @@
 <section id="breadcrumbs" class="breadcrumbbgimage" style="background: url(/quangminh/img/bg_breadcrumb.png)">
     <div class="breadcrumbwrapper">
         <div class="container">
-            <div class="breadcrumbtitle"><h3>Phòng Khách</h3></div>
+            <div class="breadcrumbtitle"><h1><%= @category.get_self_name %></h1></div>
             <nav>
                 <ol class="breadcrumb">
                     <li><%= link_to '<span>Trang Chủ</span>'.html_safe, erp_quangminh.root_path, title: '' %></li>
-                    <li class="active"><span><span>Phòng Khách</span></span></li>
+                    <li class="active"><span><span><%= @category.get_self_name %></span></span></li>
                 </ol>
             </nav>
         </div>
@@ -93,20 +93,20 @@
                         <strong><span>Sản Phẩm Bán Chạy</span></strong>
                     </h3>
                     <div class="block-content wrap">
-                        <% (0..4).each do |product| %>
+                        <% @products.each do |product| %>
                             <div class="product-item clearfix  on-sale">
-                                <%= link_to image_tag('/quangminh/img/blog/blog-sidebar.jpg', alt: ''),
-                                            erp_quangminh.blog_detail_path, title: '', class: 'product-img' %>
+                                <%= link_to image_tag('/quangminh/img/blog/blog-sidebar.jpg', alt: product.full_name),
+                                            erp_quangminh.blog_detail_path, title: product.full_name, class: 'product-img' %>
                                 <div class="product-info">
-                                    <h4><%= link_to 'Donec vel venen mauris', '', title: '', class: 'product-name' %></h4>
+                                    <h4><%= link_to product.full_name, '', title: product.full_name, class: 'product-name' %></h4>
                                     <div class="price">
                                         <!-- snippet/product-price.liquid -->
                                         <span class="visually-hidden">Giá:</span>
                                         <span class="price-new">
-                                            <span class='money'>12,000,000 VNĐ</span>
+                                            <span class='money'><%= format_price(product.price) %></span>
                                         </span>
                                         <span class="price-old">
-                                            <span class='money'>15,000,000 VNĐ</span>
+                                            <span class='money'><%= format_price(product.price) %></span>
                                         </span>
                                     </div>
                                 </div>
@@ -118,72 +118,50 @@
         </div>
         <div class="sidebar-overlay"></div>
         <div class="col-main col-lg-9 col-md-9">
-            <div class="shopify-section">
-                <a href="javascript:void(0)" class="open-sidebar hidden-lg hidden-md">
-                    <i class="fa fa-bars"></i> Bộ Lọc
-                </a>
-                <div class="collection-main">
-                    <div class="filters-toolbar-wrapper">
-                        <div class="filters-toolbar">
-                            <div class="row">
-                                <div class="col-md-8 col-sm-6 col-xs-12">
-                                    <div class="filters-toolbar-item hidden">
-                                        <span class="filters-toolbar-count">30 sản phẩm</span>
-                                    </div>
-                                    <div class="filters-toolbar-item text-right pull-left filter-fiel">
-                                        <label for="SortBy" class="label-sortby">Sắp xếp:</label>
-                                        <select class="filters-toolbar__input filters-toolbar__input--sort filters-toolbar-sort">
-                                            <option value="manual">Mặc định</option>
-                                            <option value="">Giá tăng dần</option>
-                                            <option value="">Giá giảm dần</option>
-                                        </select>
-                                    </div>
-                                    <span class="product-count">30 sản phẩm được tìm thấy!</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="content-section">
                 <div class="products-collection">
                     <div class="product-wrapper grid_3">
                         <div class="products-listing products-grid grid row  grid--view-itemss">
-                            <% (0..8).each do |product| %>
-                                <div class="product-layout grid__item grid__item--collection-template col-lg-4 col-md-4 col-sm-4 col-xxs-6 col-xs-12" data-price="67.00">
+                            <% @products.each do |product| %>
+                                <div class="product-layout grid__item grid__item--collection-template col-lg-4 col-md-4 col-sm-4 col-xxs-6 col-xs-12">
                                     <div class="product-item">
                                         <div class="product-item-container grid-view-item   ">
                                             <div class="left-block">
                                                 <div class="product-image-container product-image">
-                                                    <a class="grid-view-item__link image-ajax" href="<%= erp_quangminh.product_detail_path %>">
-                                                        <%= image_tag '/quangminh/img/products/product-270x270.jpg', alt: '', class: 'img-responsive' %>
-                                                        <span class="second-img hidden-sm hidden-xs">
-                                                            <%= image_tag '/quangminh/img/products/product-02-270x270.jpg', alt: '', class: 'img-responsive s-img' %>
-                                                        </span>
+                                                    <a class="grid-view-item__link image-ajax" href="<%= product_link(@category, product) %>" title="<%= product.full_name %>">
+                                                        <%= image_tag '/quangminh/img/products/product-270x270.jpg', alt: product.full_name, class: 'img-responsive' %>
                                                     </a>
-                                                    <div class="label-info">
-                                                        <span class="label-stock label label2  font-ct">Mới 2018</span>
-                                                    </div>
+                                                    <% if product.is_new? %>
+                                                        <div class="label-info">
+                                                            <span class="label-stock label label2  font-ct">Mới 2018</span>
+                                                        </div>
+                                                    <% end %>
                                                 </div>
-                                                <span class="label-product label-sale">-10%</span>
-                                                <span class="label-product label-new">Mới</span>
+                                                <% if product.is_sale? %>
+                                                    <span class="label-product label-sale">-10%</span>
+                                                <% end %>
+                                                <% if product.is_bestseller? %>
+                                                    <span class="label-product label-new">Bán chạy</span>
+                                                <% end %>
                                             </div>
                                             <div class="right-block">
                                                 <div class="caption">
-                                                    <h4 class="title-product"><%= link_to 'Tủ thờ đứng', erp_quangminh.product_detail_path, title: '', class: 'product-name' %></h4>
+                                                    <h4 class="title-product">
+                                                        <%= link_to product.full_name, product_link(@category, product), title: product.full_name, class: 'product-name' %>
+                                                    </h4>
                                                     <div class="price">
                                                         <span class="visually-hidden">Giá:</span>
                                                         <span class="price-new">
-                                                            <span class='money'>1.500.000 VNĐ</span>
+                                                            <span class='money'><%= format_price(product.price) %></span>
                                                         </span>
                                                         <span class="price-old">
-                                                            <span class="money">1.800.000 VNĐ</span>
+                                                            <span class="money"><%= format_price(product.price) %></span>
                                                         </span>
                                                     </div>
                                                 </div>
                                                 <div class="button-link">
                                                     <div class="btn-button add-to-cart action  ">
-                                                        <a class="btn-addToCart grl btn_df" href="erp_quangminh.product_detail_path" >
+                                                        <a class="btn-addToCart grl btn_df" href="<%= product_link(@category, product) %>" >
                                                             <i class="fa fa-eye"></i>
                                                             <span>Xem chi tiết sản phẩm</span>
                                                         </a>

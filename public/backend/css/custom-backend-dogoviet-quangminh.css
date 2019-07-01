@@ -1,0 +1,52 @@
+.logo-backend-login {
+  max-width: 100%;
+}
+.login .logo {
+  max-width: 380px;
+  margin: 20px auto 0;
+}
+.login .content {
+  margin: 30px auto 10px;
+  border-radius: 10px !important;
+}
+.login .content .form-actions {
+  text-align: center;
+  padding: 0 20px;
+  border-bottom: none;
+}
+.login .content .form-actions .btn {
+  border-radius: 10px !important;
+}
+.login .content .form-title {
+  margin-bottom: 13px;
+  color: #ff3300 !important;
+}
+.page-header.navbar {
+  height: 60px;
+  min-height: 60px;
+}
+.page-header.navbar .page-logo .logo-default {
+  height: 44px;
+}
+.page-header.navbar .menu-toggler.sidebar-toggler {
+  margin: 20px 0 0;
+}
+.page-header.navbar .top-menu {
+  margin-top: 5px;
+}
+.page-content-wrapper .page-content {
+  padding: 20px 20px 20px;
+}
+.btn.green-seagreen:not(.btn-outline), .btn.red:not(.btn-outline) {
+  border-radius: 3px !important;
+}
+.img-dashboard {
+  width: 100%;
+  height: auto;
+}
+.image-dashboard {
+  padding: 5px;
+}
+.page-container-bg-solid .page-bar, .page-content-white .page-bar {
+  margin: -10px -20px 0;
+}

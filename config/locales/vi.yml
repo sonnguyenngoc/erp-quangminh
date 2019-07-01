@@ -1,0 +1,243 @@
+vi:
+  layouts:
+    erp:
+      backend:
+        menu:
+          product:
+            product: 'Sản Phẩm'
+            products: 'Danh sách sản phẩm'
+            product_materials: 'Chất liệu sản phẩm'
+            product_categories: 'Chuyên mục sản phẩm'
+            product_brands: 'Thương hiệu sản phẩm'
+          blog:
+            blog: 'Tin Tức'
+            blogs: 'Danh sách tin tức'
+            blog_categories: 'Chuyên mục tin tức'
+  erp:
+    quangminh:
+      backend:
+        products:
+          create:
+            success: 'Thêm sản phẩm thành công'
+          update:
+            success: 'Cập nhật sản phẩm thành công'
+          destroy:
+            success: 'Xóa sản phẩm thành công'
+          index:
+            products: 'Danh sách sản phẩm'
+            create: 'Thêm sản phẩm mới'
+            name: 'Tên sản phẩm'
+            price: 'Giá sản phẩm'
+            stock: 'Tồn kho'
+            product_category: 'Chuyên mục'
+            status: 'Trạng thái'
+          list:
+            name: 'Tên sản phẩm'
+            price: 'Giá sản phẩm'
+            stock: 'Tồn kho'
+            product_category: 'Chuyên mục'
+            status: 'Trạng thái'
+            custom_order: 'Sắp xếp sản phẩm'
+            delete: 'Xóa sản phẩm'
+            no_matching_records_found: 'Danh sách sản phẩm không được tìm thấy...'
+          new:
+            products: 'Danh sách sản phẩm'
+            create: 'Thêm sản phẩm mới'
+          edit:
+            products: 'Danh sách sản phẩm'
+            create: 'Thêm sản phẩm mới'
+          form:
+            code: 'Mã sản phẩm'
+            help_code: 'Mã sản phẩm mang giá trị duy nhất cho 1 sản phẩm'
+            placeholder_code: 'Nhập mã sản phẩm - Sẽ tự tạo khi để trống...'
+            name: 'Tên sản phẩm'
+            help_name: 'Tên sản phẩm mang giá trị duy nhất cho 1 sản phẩm'
+            placeholder_name: 'Nhập tên sản phẩm...'
+            price: 'Giá sản phẩm'
+            placeholder_price: 'Nhập giá sản phẩm...'
+            check_show_price: 'Hiển thị giá sản phẩm'
+            images: 'Hình ảnh minh họa cho sản phẩm'
+            product_specs: 'THÔNG SỐ SẢN PHẨM'
+            product_material: 'Chất liệu sản phẩm'
+            choose_product_material: 'Chọn chất liệu sản phẩm...'
+            product_category: 'Chuyên mục sản phẩm'
+            choose_product_category: 'Chọn chuyên mục sản phẩm...'
+            product_brand: 'Thương hiệu sản phẩm'
+            choose_product_brand: 'Chọn thương hiệu sản phẩm...'
+            is_new: 'Sản phẩm mới'
+            check_is_new: 'Đây là sản phẩm mới'
+            is_bestseller: 'Sản phẩm bán chạy'
+            check_is_bestseller: 'Đây là sản phẩm bán chạy'
+            is_eol: 'Sản phẩm ngừng kinh doanh'
+            check_is_eol: 'Đây là sản phẩm đã ngừng kinh doanh'
+            is_sale: 'Sản phẩm giảm giá'
+            check_is_sale: 'Đây là sản phẩm giảm giá'
+            sale_precent: 'Phần trăm giảm'
+            placeholder_sale_precent: 'Nhập số phần trăm giảm giá...'
+            sale_price: 'Giá đã giảm'
+            placeholder_sale_price: 'Nhập giá đã giảm...'
+            meta_keywords: 'Từ khóa chuyên mục (SEO)'
+            placeholder_meta_keywords: 'Nhập từ khóa chuyên mục (SEO)...'
+            meta_description: 'Mô tả chuyên mục (SEO)'
+            placeholder_meta_description: 'Nhập mô tả chuyên mục (SEO)...'
+            product_description: 'MÔ TẢ SẢN PHẨM'
+            placeholder_product_description: 'Nhập nội dung mô tả sản phẩm...'
+        product_materials:
+          create:
+            success: 'Thêm chất liệu thành công'
+          update:
+            success: 'Cập nhật chất liệu thành công'
+          destroy:
+            success: 'Xóa chất liệu thành công'
+          index:
+            product_materials: 'Danh sách chất liệu'
+            create: 'Thêm chất liệu mới'
+            name: 'Tên chất liệu'
+            description: 'Mô tả chất liệu'
+          list:
+            name: 'Tên chất liệu '
+            description: 'Mô tả chất liệu'
+            delete: 'Xóa chất liệu'
+            no_matching_records_found: 'Danh sách chất liệu không được tìm thấy...'
+          new:
+            product_materials: 'Danh sách chất liệu'
+            create: 'Thêm chất liệu mới'
+          edit:
+            product_materials: 'Danh sách chất liệu'
+            create: 'Thêm chất liệu mới'
+          form:
+            name: 'Tên chất liệu'
+            placeholder_name: 'Nhập tên chất liệu...'
+            description: 'Mô tả chất liệu'
+            placeholder_description: 'Nhập mô tả chất liệu...'
+        product_categories:
+          create:
+            success: 'Thêm chuyên mục sản phẩm thành công'
+          update:
+            success: 'Cập nhật chuyên mục sản phẩm thành công'
+          destroy:
+            success: 'Xóa chuyên mục sản phẩm thành công'
+          index:
+            product_categories: 'Chuyên mục sản phẩm'
+            create: 'Thêm chuyên mục mới'
+            name: 'Tiêu đề chuyên mục'
+            parent_category: 'Chuyên mục cha'          
+          list:
+            name: 'Tiêu đề chuyên mục'
+            custom_order: 'Sắp xếp chuyên mục'
+            delete: 'Xóa chuyên mục'
+            no_matching_records_found: 'Danh sách chuyên mục sản phẩm không được tìm thấy...'
+          new:
+            product_categories: 'Chuyên mục sản phẩm'
+            create: 'Thêm chuyên mục mới'
+          edit:
+            product_categories: 'Chuyên mục sản phẩm'
+            create: 'Thêm chuyên mục mới'
+          form:
+            parent_category: 'Chuyên mục cha'
+            choose_parent_category: 'Lựa chọn chuyên mục cha'
+            name: 'Tiêu đề chuyên mục'
+            placeholder_name: 'Nhập tiêu đề chuyên mục...'            
+            new_product_category: 'Thêm chuyên mục mới'
+            meta_keywords: 'Từ khóa chuyên mục (SEO)'
+            placeholder_meta_keywords: 'Nhập từ khóa chuyên mục (SEO)...'
+            meta_description: 'Mô tả chuyên mục (SEO)'
+            placeholder_meta_description: 'Nhập mô tả chuyên mục (SEO)...'
+        product_brands:
+          create:
+            success: 'Thêm thương hiệu sản phẩm thành công'
+          update:
+            success: 'Cập nhật thương hiệu sản phẩm thành công'
+          destroy:
+            success: 'Xóa thương hiệu sản phẩm thành công'
+          index:
+            product_brands: 'Thương hiệu sản phẩm'
+            create: 'Thêm thương hiệu mới'
+            name: 'Tên thương hiệu'
+          list:
+            name: 'Tên thương hiệu sản phẩm'
+            custom_order: 'Sắp xếp thương hiệu'
+            delete: 'Xóa thương hiệu'
+            no_matching_records_found: 'Danh sách thương hiệu sản phẩm không được tìm thấy...'
+          new:
+            product_brands: 'Thương hiệu sản phẩm'
+            create: 'Thêm thương hiệu mới'
+          edit:
+            product_brands: 'Thương hiệu sản phẩm'
+            create: 'Thêm thương hiệu mới'
+          form:
+            name: 'Tên thương hiệu'
+            placeholder_name: 'Nhập tên thương hiệu sản phẩm...'
+            description: 'Mô tả thương hiệu'
+            placeholder_description: 'Nhập mô tả tên thương hiệu sản phẩm...'
+            seo: 'Thuộc Tính Hỗ Trợ SEO'
+            meta_keywords: 'Từ khóa thương hiệu (SEO)'
+            placeholder_meta_keywords: 'Nhập từ khóa thương hiệu (SEO)...'
+            meta_description: 'Mô tả thương hiệu (SEO)'
+            placeholder_meta_description: 'Nhập mô tả thương hiệu (SEO)...'
+        blogs:
+          create:
+            success: 'Thêm tin tức thành công'
+          update:
+            success: 'Cập nhật tin tức thành công'
+          destroy:
+            success: 'Xóa tin tức thành công'
+          index:
+            create: 'Thêm tin tức mới'
+            name: 'Tiêu đề tin tức'
+            category: 'Chuyên mục tin tức'
+            blogs: 'Danh sách tin tức'
+          list:
+            name: 'Tiêu đề tin tức'
+            delete: 'Xóa tin tức'
+            custom_order: 'Sắp xếp tin tức'
+            no_matching_records_found: 'Danh sách tin tức không được tìm thấy...'
+          new:
+            blogs: 'Danh sách tin tức'
+            create: 'Thêm tin tức mới'
+          edit:
+            blogs: 'Danh sách tin tức'
+            create: 'Thêm tin tức mới'
+          form:
+            name: 'Tiêu đề tin tức'
+            create: 'Thêm chuyên mục bài viết mới'
+            placeholder_name: 'Nhập tiêu đề tin tức...'
+            blog_category: 'Chuyên mục tin tức'
+            choose_blog_category: 'Chọn chuyên mục tin tức'
+            meta_keywords: 'Từ khóa thẻ meta SEO'
+            placeholder_meta_keywords: 'Nhập từ khóa thẻ meta SEO...'
+            meta_description: 'Mô tả thẻ meta SEO'
+            placeholder_meta_description: 'Nhập mô tả thẻ meta SEO...'
+            content: 'Nội dung tin tức'
+            placeholder_content: 'Nhập nội dung tin tức...'
+        blog_categories:
+          create:
+            success: 'Thêm chuyên mục tin tức thành công'
+          update:
+            success: 'Cập nhật chuyên mục tin tức thành công'
+          destroy:
+            success: 'Xóa chuyên mục tin tức thành công'
+          index:
+            create: 'Thêm chuyên mục mới'
+            name: 'Tiêu đề chuyên mục'
+            parent_category: 'Chuyên mục cha'
+            blog_categories: 'Chuyên mục tin tức'
+          list:
+            name: 'Tiêu đề chuyên mục'
+            custom_order: 'Sắp xếp chuyên mục'
+            delete: 'Xóa chuyên mục'
+            no_matching_records_found: 'Danh sách chuyên mục tin tức không được tìm thấy...'
+          new:
+            blog_categories: 'Chuyên mục tin tức'
+            create: 'Thêm chuyên mục mới'
+          edit:
+            blog_categories: 'Chuyên mục tin tức'
+            create: 'Thêm chuyên mục mới'
+          form:
+            parent_category: 'Chuyên mục cha'
+            choose_parent_category: 'Lựa chọn chuyên mục cha'
+            name: 'Tiêu đề chuyên mục'
+            placeholder_name: 'Nhập tiêu đề chuyên mục...'
+            description: 'Mô tả chuyên mục'
+            placeholder_description: 'Nhập mô tả tên chuyên mục...'
+            new_blog_category: 'Thêm chuyên mục mới'

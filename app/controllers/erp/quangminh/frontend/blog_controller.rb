@@ -8,7 +8,7 @@ module Erp
         
         def detail
           @body_style = 'template-article'
-        end
+        end        
       end
     end
   end

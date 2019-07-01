@@ -1,0 +1,65 @@
+<%= form_for([erp_quangminh, :backend, product_category]) do |f| %>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light bordered">
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <%= erp_form_control("text", {
+                                name: 'product_category[name]',
+                                value: product_category.name,                   
+                                label: t('.name'),
+                                placeholder: t('.placeholder_name'),
+                                required: true,
+                                errors: product_category.errors.full_messages_for(:name)
+                            }) %>                                                      
+                        </div>
+                        <div class="col-md-6">
+                            <%= erp_form_control("dataselect", {
+                                name: 'product_category[parent_id]',
+                                value: product_category.parent_id,
+                                text: product_category.parent_name,
+                                placeholder: t('.choose_parent_category'),
+                                label: t('.parent_category'),
+                                url: erp_quangminh.dataselect_backend_product_categories_path(format: 'json'),
+                                create: {
+                                    url: erp_quangminh.new_backend_product_category_path,
+                                    title: t('.new_product_category'),
+                                    container_selector: '.new_product_category',
+                                    input_selector: 'input[name="product_category[name]"]'
+                                }
+                            }) %>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <%= erp_form_control("textarea", {
+                                name: 'product_category[meta_keywords]',
+                                value: product_category.meta_keywords,                   
+                                label: t('.meta_keywords'),
+                                placeholder: t('.placeholder_meta_keywords')
+                            }) %>                                                      
+                        </div>
+                        <div class="col-md-6">
+                            <%= erp_form_control("textarea", {
+                                name: 'product_category[meta_description]',
+                                value: product_category.meta_description,                   
+                                label: t('.meta_description'),
+                                placeholder: t('.placeholder_meta_description')
+                            }) %>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <%= erp_component('button/save', {
+        text: t('submit')
+    }) %>
+    
+    <%= erp_component('button/cancel', {
+        text: t('cancel'),
+        href: erp_quangminh.backend_product_categories_path
+    }) %>
+<% end %>

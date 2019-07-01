@@ -1,0 +1,95 @@
+<ul class="main-navigation nav hidden-tablet hidden-sm hidden-xs">
+    <li class=" megamenu_lv1  ss_megamenu_drop width-custom active ">
+        <%= link_to '<span class="megamenu_title">Trang Chủ</span>'.html_safe, erp_quangminh.root_path, title: '' %>
+    </li>
+    <% Erp::Quangminh::ProductCategory.get_parent_categories.each do |category| %>
+    <li class=" megamenu_lv1  ss_megamenu_drop width-custom ">
+        <a href="<%= category_link(category) %>" title="<%= category.get_self_name %>">
+            <!--<span class="ss_megamenu_icon mega-hot">hot</span>-->
+            <span class="megamenu_title"><%= category.get_self_name %></span>
+        </a>
+        <% if category.children.count > 0 %>
+        <div class="ss_megamenu_dropdown megamenu_dropdown width-custom left  mega_class wrap-product" style="width:850px;margin-left: -48px !important;">
+            <div class="row">
+                <div class="ss_megamenu_col col_menu col-md-3">
+                    <div class="ss_inner">
+                        <div class="row">
+                            <% category.children.each do |children_category| %>
+                            <div class="ss_megamenu_col col-md-12">
+                                <ul class="menulink">
+                                    <li class="megamenu_lv2 megatitle">
+                                        <%= link_to children_category.get_self_name,
+                                            category_link(children_category),
+                                            title: children_category.get_self_name %>
+                                    </li>
+                                </ul>
+                            </div>
+                            <% end %>                                            
+                        </div>
+                    </div>
+                </div>
+                <div class="ss_megamenu_col col_product col-md-9 col-sm-9">
+                    <div class="ss_product_mega">
+                        <div class="ss_product_content row">
+                            <div class="ss_inner">
+                                <% (0..1).each do |product| %>
+                                    <div class="ss_megamenu_col product_col_1 col-md-6">
+                                        <div class="product-item">
+                                            <div class="product-item-container   ">
+                                                <div class="left-block">
+                                                    <div class="product-image-container product-image">
+                                                        <%= link_to image_tag('/quangminh/img/products/product-large.jpg', class: 'img-responsive', alt: ''),
+                                                                    '', title: '', class: 'grid-view-item__link image-ajax' %>
+                                                    </div>
+                                                    <div class="box-label">
+                                                        <span class="label-product label-new">new</span>
+                                                        <span class="label-product label-sale">
+                                                            <span class="hidden">Sale</span> -25%
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="right-block text-center">
+                                                    <div class="caption">
+                                                        <h4 class="title-product">
+                                                            <%= link_to 'Donec vel venen mauris', '', title: '', class: 'product-name' %>
+                                                        </h4>
+                                                        <div class="price">
+                                                            <!-- snippet/product-price.liquid -->
+                                                            <span class="visually-hidden">Regular price</span>
+                                                            <span class="price-new">
+                                                                <span class='money'>$120.00</span>
+                                                            </span>
+                                                            <span class="price-old">
+                                                                <span class='money'>$160.00</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="button-link">
+                                                    <div class="btn-button add-to-cart action  ">
+                                                        <form class="variants">
+                                                            <input type="hidden" name="id"/>
+                                                            <a class="btn-addToCart grl btn_df" href="" title="">
+                                                                <i class="fa fa-eye"></i>
+                                                                <span>Xem chi tiết sản phẩm</span>
+                                                            </a>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </li>
+    <% end %>
+    <li class="megamenu_lv1 ">
+        <%= link_to '<span class="megamenu_title">Tư Vấn & Thiết Kế</span>'.html_safe, '', title: '' %>
+    </li>
+</ul>
